@@ -1,0 +1,128 @@
+<!--
+Needs to be done
+
+1. handle xhr request
+2. Map needs to be generated
+3. Status checker
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - Home</title>
+    <link rel="stylesheet" href="home_style.css"> 
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="index.html" id="navhome">HOME</a>
+        <a href="#" id="status" onclick="return getStatus()">CHECK STATUS</a>
+        <a href="contact_us.html" id="contact">CONTACT US</a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+
+<br><br><center><img src="check-in.png" id="logo" alt="Check in logo"></center>
+<pre>note: starting from top left corner, going down and snaking through</pre>
+<center><button type="submit" id="button">Submit</button></center>
+<br><br>
+
+<span id="third-floor-map">
+<div class="outline">
+<table class="map" cellspacing="0" cellpadding="0">
+<tr>
+    <td></td>
+    <td><div class="empty-square"></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r300"><text class="room-num">300</text></div></td>
+    <td><div class="empty-square"></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r301"><text class="room-num">301</text></div></td>
+    <td><div class="empty-square"></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r302"><text class="room-num">302</text></div></td>
+    <td><div class="square" id="r317"><text class="room-num">317</text></div></td>
+    <td></td>
+</tr>
+<tr>
+    <td><div class="bigger-square" id="r303"><text class="room-num">303</text></div></td>
+    <td><div class="bigger-square" id="r316"><text class="room-num">316</text></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r305"><text class="room-num">305</text></div></td>
+    <td><div class="square" id="r315"><text class="room-num">315</text></div></td>
+</tr>
+<tr>
+    <td><div class="empty-square"></div></td>
+    <td><div class="empty-square"></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r306"><text class="room-num">306</text></div></td>
+    <td><div class="square" id="r314"><text class="room-num">314</text></div></td>
+</tr>
+<tr>
+    <td><div class="bigger-square" id="r307"><text class="room-num">307</text></div><br></td>
+    <td><div class="bigger-square" id="r313"><text class="room-num">313</text></div></td>
+</tr>
+<tr>
+    <td><div class="square" id="r308"><text class="room-num">308</text></div></td>
+    <td><div class="square" id="r312"><text class="room-num">312</text></div></td>
+</tr>
+<tr>
+    <td><div class="empty"></div></td>
+    <td><div class="empty-square"></div></td>
+</tr>
+<tr>
+    <td></td>
+    <td><div class="square" id="r309"><text class="room-num">309</text></div></td>
+</tr>
+<tr>
+    <td></td>
+    <td><div class="bigger-square" id="r310"><text class="room-num">310</text></div></td>
+</tr>
+<tr>
+    <td></td>
+    <td><div class="square" id="r311"><text class="room-num">311</text></div></td>
+</tr>
+
+</table>
+</div>
+</span>
+<span id="first-floor-map">
+
+</span>
+
+<span id="second-floor-map">
+
+</span>
+<br>
+
+<span id="fourth-floor-map">
+
+</span>
+
+</center>
+<br><br><br>
+
+</body>
+</html>
+
+<script>
+    function getStatus(){
+        // get status based off of id number in back end.
+        /* if status == true aka they have a room
+        window.location.replace(room.html);
+        else
+        window.location.replace(no_room.html);
+        */
+        }
+</script>

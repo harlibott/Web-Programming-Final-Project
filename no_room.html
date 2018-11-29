@@ -1,0 +1,57 @@
+<!--
+Need to do
+
+1. check backend and return this html with either you have a room, or you do not have a room
+2. no_room.html and room.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - Status</title>
+    <link rel="stylesheet" href="checkin_style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="index.html" id="navhome" onclick="return alertExit(1)">HOME</a>
+        <a href="#" id="status" onclick="return alertExit(2)">CHECK STATUS</a>
+        <a href="#" id="contact" onclick="return alertExit(3)">CONTACT US</a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+<br>
+
+<div class="body">
+<center>
+<h3> You are <text id="make-me-red">NOT</text> checked in to a room.</h3>
+<p>To check in to a room, please navigate to the home page.</p>
+</center>
+
+</div>
+</body>
+</html>
+
+<script>
+function alertExit(num){
+
+    if(num === 1){
+        // do nothing because they dont have a room
+    }else if(num === 2){
+        function getStatus(){
+            // get status based off of id number in back end.
+            /* if status == true aka they have a room
+            window.location.replace(room.html);
+            else
+            window.location.replace(no_room.html);
+            */
+        }
+    }else if(num === 3){
+        window.location.replace(contact_us.html);
+    }
+}
+</script>

@@ -1,0 +1,57 @@
+.square {
+    height: 35px;
+    width: 55px;
+    border: 2px solid black;
+    display: inline-block;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+.bigger-square {
+    height: 25px;
+    width: 70px;
+    border: 2px solid black;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+.room-num{
+    font-size: 15px;
+    text-align: center;
+}
+
+.square:hover, .rectangle:hover{
+  cursor: pointer;
+  opacity: .6;
+}
+
+.empty{
+    height: 55px;
+    width: 55px;
+}
+.empty-square {
+    height: 35px;
+    width: 55px;
+    border: 2px solid gray;
+    display: inline-block;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: -5px;
+    background-color: grey;
+}
+
+.outline{
+    border: 3px solid #B02318;
+    padding: 10px;
+}
+
+td, th{
+    padding: 1px;
+    border: 1px solid rgb(223, 217, 196);
+}
+
+.map{
+    width: 40%;
+}

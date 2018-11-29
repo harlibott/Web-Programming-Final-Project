@@ -1,0 +1,41 @@
+<!--
+Need to do
+
+1. make room empty backend
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - You have been checked out</title>
+    <link rel="stylesheet" href="checkedin_style.css">
+    <link rel="stylesheet" href="checkin_style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="#" id="navhome"></a>
+        <a href="#" id="status"></a>
+        <a href="#" id="contact"></a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+
+<br><center><img src="check-in.png" id="logo" alt="Check in logo"></center>
+
+<div class="body">
+
+<h3>You have <text id="make-me-red">SUCCESFULLY</text> been checked out.</h3>
+<p>You will be redirected back to the home page. If you are not redirected in 10 seconds, please click <a href="index.html">here.</a></p>
+
+</div>
+</body>
+</html>
+
+<script>
+window.setTimeout("location=('index.html');",8000);
+</script>

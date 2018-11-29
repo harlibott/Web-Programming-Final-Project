@@ -1,0 +1,75 @@
+<!---
+Needs to be done:
+
+1. Handle XHR request
+2. status checker
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - SUCCESS</title>
+    <link rel="stylesheet" href="checkin_style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="#" id="navhome" onclick="return alertExit(1)">HOME</a>
+        <a href="#" id="status" onclick="return alertExit(2)">CHECK STATUS</a>
+        <a href="#" id="contact" onclick="return alertExit(3)">CONTACT US</a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+<br>
+
+<div class="body">
+<center>
+<h3><text id="make-me-green">SUCCESS!</text> You are checked in.</h3>
+<p>The details of your room are below.</p>
+
+<strong>Room Status: <text id="make-me-red">Occupied</text></strong>
+<br><br>
+<div id="specs-box">
+<strong>Campus: </strong><text id="make-me-red">UGA - Athens</text>
+<br><strong>Building: </strong><text id="make-me-red">Miller Learning Center</text>
+<br><strong>Floor: </strong><text id="make-me-red">{floor}</text>
+<br><strong>Room number: </strong><text id="make-me-red">{room number}</text>
+<br><strong>Student Id: </strong><text id="make-me-red">{student id 811}</text>
+</div>
+
+<br>
+<p>Are you ready to checkout of this room?</p>
+<form method="POST" action="">
+<button type="submit" id="button">Check Out</button>
+</form>
+</center>
+
+</div>
+</body>
+</html>
+
+<script>
+function alertExit(num){
+
+    if(num === 1){
+         alert("WARNING: You may NOT return to avalible rooms until you check out of your current room.");
+    }else if(num === 2){
+        function getStatus(){
+            // get status based off of id number in back end.
+            /* if status == true aka they have a room
+            window.location.replace(room.html);
+            else
+            window.location.replace(no_room.html);
+            */
+        }
+    }else if(num === 3){
+        window.location.replace(contact_us.html);
+    }
+}
+</script>

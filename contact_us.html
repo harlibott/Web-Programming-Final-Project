@@ -1,0 +1,91 @@
+<!---
+Needs to be done:
+
+1. at line 22, need a checker to see if the user has a room checked in. If not,
+they may navigate back home. If they do, they may not navigate back home. See 
+js function alertExit(num). html ex. "onclick="return alert()"
+
+2.status checker
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - Check In To Study Room</title>
+    <link rel="stylesheet" href="contact_us_style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="#" id="navhome">HOME</a>
+        <a href="#" id="status" onclick="return alertExit(2)">CHECK STATUS</a>
+        <a href="contact_us.html" id="contact">CONTACT US</a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+<br>
+
+<br><br><center><img src="check-in.png" id="logo" alt="Check in logo"></center>
+<div class="body">
+<h2>Ctrl + Alt + Elite</h2>
+<br>
+
+<h3>Dr. Schema Html</h3>
+<p>
+<strong>Email: </strong><a href="schema.html">schema.html</a>
+<br><br><img id="drschema" src="drschema.jpg">
+</p><br>
+
+<h3>Connor Beard</h3>
+<p>
+<strong>Email: </strong><a href="mailto:cwb30750@uga.edu">cwb30750@uga.edu</a>
+<br><br><img id="connor" src="connor.jpg">
+</p><br>
+
+<h3>Harli Bott</h3>
+<p>
+<strong>Email: </strong><a href="mailto:hjb15032@uga.edu">hjb15032@uga.edu</a><br>
+<br><br><img id="harli" src="harli.jpg">
+</p><br>
+
+
+<h3>Thomas Kruegler</h3>
+<p>
+<strong>Email: </strong><a href="mailto:tak83658@uga.edu">tak83658@uga.edu</a><br>
+<br><br><img id="tom" src="tom.jpg">
+</p><br>
+
+<h3>Tyler Murray</h3>
+<p>
+<strong>Email: </strong><a href="mailto:tmg20550@uga.edu">tmg20550@uga.edu</a><br>
+<br><br><img id="ty" src="ty.jpg">
+</p><br>
+
+<p><center>Go dawgs!</center></p>
+<p><center>© creative commons or something like that</center></p>
+</div>
+</body>
+</html>
+
+<script>
+    function alertExit(){
+        // THIS ONLY GETS CALLED IF USER HAS A ROOM CHECKED IN ALREADY
+        if(num === 1){
+             alert("WARNING: You may NOT return to avalible rooms until you check out of your current room.");
+        }else if(num == 2){
+            function getStatus(){
+            // get status based off of id number in back end.
+            /* if status == true aka they have a room
+            window.location.replace(room.html);
+            else
+            window.location.replace(no_room.html);
+            */
+        }
+        }
+    }
+</script>

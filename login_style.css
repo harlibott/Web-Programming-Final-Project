@@ -1,0 +1,35 @@
+
+@media screen and (max-width: 787px){
+    input{
+        width: 100%;
+        font-size: 15px;
+    }
+}
+.login-box{
+    margin: auto;
+    width: 30%;
+    border: 3px solid #B02318;
+    padding: 20px;
+    text-align: center;
+}
+
+input{
+    height: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Text stylings */
+
+#output{
+    font-family: "Century Gothic", CenturyGothic, 
+    Geneva, AppleGothic, sans-serif;
+}
+
+#disclaimer{
+    font-family: "Century Gothic", CenturyGothic, 
+    Geneva, AppleGothic, sans-serif; 
+    margin: 60px 150px 30px 150px;
+    text-align: center;
+    font-size: 10px;
+}

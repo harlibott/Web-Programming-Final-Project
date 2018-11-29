@@ -1,0 +1,109 @@
+<!--
+Needs to be done
+
+1. XHR request handle
+2. mako template to generate variables with { } around them in html
+3 status checker
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - Check In To Study Room</title>
+    <link rel="stylesheet" href="checkin_style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="#" id="navhome" onclick="return alertExit(1)">HOME</a>
+        <a href="#" id="status" onclick="return alertExit(2)">CHECK STATUS</a>
+        <a href="#" id="contact" onclick="return alertExit(3)">CONTACT US</a>
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+<br>
+
+<div class="body">
+<strong><p id="information">UGA - Athens > MLC > {Floor} > {Room} > {Student # 811}</p></strong><br>
+
+<p>You are about to check in to a study room! Please make sure that the information below
+    is correct before checking in to the study room. Fill out the information below to check in!
+    Please make sure you come back and check out of the study room once you are done, otherwise
+    you will not be able to check in to another room in the future.</p>
+
+<br>   
+<center>Room Status: <text id="make-me-green">Available</text></center>
+<br>Campus: <text id="make-me-red">UGA - Athens</text>
+<br>Building: <text id="make-me-red">Miller Learning Center</text>
+<br>Floor: <text id="make-me-red">{floor}</text>
+<br>Room number: <text id="make-me-red">{room number}</text>
+<br>Student Id: <text id="make-me-red">{student id 811}</text>
+
+<br><br>
+
+<form id="check-in-submission" method="POST" action="">
+    <strong><label id="label" for="floor">Number of People in Group: </label></strong>
+    <select class="select" name="group-number">
+        <option value="1">1</option> 
+        <option value="2" selected="selected" >2</option>
+        <option value="3">3</option> 
+        <option value="4">4</option>
+        <option value="5">5</option> 
+        <option value="6">6</option>
+        <option value="7">7</option> 
+        <option value="8">8</option>
+        <option value="9">9</option> 
+        <option value="10">10</option>
+    </select><br><br>
+<span id="output"></span><br><br>
+<center>
+<button type="submit" id="button">Check Me In</button>
+<button type="button" id="button" class="exit" onclick="alertExit(1)">Exit</button>
+</center>
+</form>
+
+</div>
+</body>
+</html>
+
+<script>
+function alertExit(num){
+    if(confirm("Do you wish to proceed? If so, you will not check in.")){
+        if(num === 1){
+            window.location.replace("index.html");
+        }else if(num === 2){
+            function getStatus(){
+            // get status based off of id number in back end.
+            /* if status == true aka they have a room
+            window.location.replace(room.html);
+            else
+            window.location.replace(no_room.html);
+            */
+            }
+        }else if(num === 3){
+            window.location.replace("contact_us.html");
+        }
+        }else{
+        // do nothing
+        }
+}
+
+$('.select').change(function() {
+    var val = $(".select option:selected").text();
+
+    if(val === "1"){
+        $('#output').html("Please be aware that policy states that the use of study rooms are for 2 or more students. If you wish to check in to a study room with 1 person, you may be subjected to leave if staff ask.");
+        $('#output').css('color', '#B02318');
+
+    }else{
+        $('#output').html('');
+        $('#output').css('color', '#B02318');
+    }
+});
+
+</script>

@@ -1,0 +1,47 @@
+#connor{
+    width: 30%;
+    height: 30%;
+    padding:2px;
+    border:2px solid #B02318;
+    background-color:#B02318;
+}
+
+#harli{
+    width: 30%;
+    height: 30%; 
+    padding:2px;
+    border:2px solid #B02318;
+    background-color:#B02318;
+}
+
+#tom{
+    width: 30%;
+    height: 30%;
+    padding:2px;
+    border:2px solid #B02318;
+    background-color:#B02318;
+}
+
+#ty{
+    width: 30%;
+    height: 30%;
+    padding:2px;
+    border:2px solid #B02318;
+    background-color:#B02318;
+}
+
+#drschema{
+    width: 40%;
+    height: 40%; 
+    padding:2px;
+    border:2px solid #B02318;
+    background-color:#B02318;
+}
+a{
+    text-decoration-color: #B02318;
+    color: #B02318;
+}
+
+a:visited{
+    color: black;
+}

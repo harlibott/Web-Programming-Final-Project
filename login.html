@@ -1,0 +1,127 @@
+<!-- 
+Needs to be done:
+
+1. Validate User ID number with numbers in our databse
+2. Handle XHR request
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIN - Login</title>
+    <link rel="stylesheet" href="login_style.css"> 
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <nav class="menu">
+        <a href="#" id="admin">ADMIN</a>
+    </nav>
+</div>
+
+<br><br><center><img src="check-in.png" id="logo" alt="Check in logo"></center>
+
+<br><br>
+<form class="login-box" method="POST" action="">
+
+<p class="alert-heading">Student Id Number</p>
+<input required id="id-num" name="id" onkeypress="return numberCheck(event)" 
+type="text" placeholder="811/810"><br><br>
+
+<center><span id="output"></span></center><br>
+<button type="button" id="button">Submit</button>
+</form>
+
+<p id="disclaimer">* This web application is intended
+for current students at The University of Georgia. If you are not a current
+student at UGA you may not use CheckIN. </p>
+</body>
+</html>
+
+<script>
+
+// error checking stuff
+var httpGood;
+var empty;
+
+function numberCheck(e){
+    var char=(e.which) ? e.which : e.keyCode
+    if(char > 31 && (char < 48 || char > 57)){
+        return false;
+    } 
+return true;
+}
+
+function validateId(id){
+    var error = null;
+    var id = $('#id-num').val();
+
+    if(id.length == 9){
+        return true;
+    }else{
+        return 'Student Id # must be 9 numbers long.';
+    }
+}
+
+
+$(document).ready(function() {
+    $('#id-num').blur(function(e) {
+    	var result  = validateId('id-num');
+        if (result == true) {
+            $('#output').html('');
+            $('#output').css('color', 'green');
+            document.getElementById("button").disabled = false;
+            document.getElementById("button").style.background='#B02318';
+            httpGood = true;
+        }else{
+            $('#output').html(result);
+            $('#output').css('color', '#B02318');
+            document.getElementById("button").disabled = true;
+            document.getElementById("button").style.background='grey';
+            httpGood = false;
+        }
+        console.log(httpGood);
+    });
+});
+
+// xhr request stuff
+
+function request_stuff(){
+    var httpRequest;
+
+    function alertContents(){
+        if(httpRequest.readyState === XMLHttpRequest.DONE){
+            if(httpRequest.status === 200){
+                // login
+            }else{
+                console.log('There was a problem making the request');
+            }
+        }
+    }// alert contents
+    // if http request went through, redirect to home page, otherwise bring back to 
+    //login with "invalid student id" message
+    function make_request(){
+        if(!httpGood){
+            alert("Please enter a valid student id number");
+        }else{
+            httpRequest = new XMLHttpRequest();
+            var id = $('#id-num').val();
+
+            if(!httpRequest){
+                console.log('no, cant make XMLhttp instance');
+                return false;
+            }
+            httpRequest.onreadystatechange = alertContents;
+           // httpRequest.open('GET', encoded url stuff here)
+           httpRequest.send();
+           console.log("Sent");
+        }// http good if else (aka if the user triest to click submit if not valid id length)
+    }// make request
+    document.getElementById('button').addEventListener("click", make_request);
+}// reqeust stuff
+request_stuff();
+</script>

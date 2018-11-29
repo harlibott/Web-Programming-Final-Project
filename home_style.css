@@ -1,0 +1,15 @@
+#welcome-message{
+    font-family: "Century Gothic", CenturyGothic, 
+    Geneva, AppleGothic, sans-serif; 
+    margin: 30px 100px 30px 100px;
+    text-align: left;
+    font-size: 17px;
+}
+
+.home-selection{
+    margin: 0px 100px 0px 100px;
+}
+
+#label{
+    font-size: 20px;
+}
