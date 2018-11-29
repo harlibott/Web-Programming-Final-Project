@@ -1,45 +1,51 @@
 .square {
-    height: 35px;
-    width: 55px;
+    height: 25px;
+    width: 45px;
     border: 2px solid black;
     display: inline-block;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
-  }
+    background-color: red;
+}
 
 .bigger-square {
-    height: 25px;
-    width: 70px;
+    height: 15px;
+    width: 60px;
     border: 2px solid black;
     display: inline-block;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
-  }
+    background-color: green;
+}
 
 .room-num{
     font-size: 15px;
     text-align: center;
 }
 
-.square:hover, .rectangle:hover{
+.square:hover, .bigger-square:hover{
   cursor: pointer;
   opacity: .6;
 }
 
 .empty{
-    height: 55px;
-    width: 55px;
+    height: 45px;
+    width: 45px;
 }
 .empty-square {
-    height: 35px;
-    width: 55px;
-    border: 2px solid gray;
+    height: 25px;
+    width: 45px;
+    border: 2px solid rgb(224, 224, 224);
     display: inline-block;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
     margin-bottom: -5px;
-    background-color: grey;
+    background-color: rgb(224, 224, 224);
+}
+
+.filled{
+    background-color: rgb(224, 224, 224);
 }
 
 .outline{
@@ -48,10 +54,11 @@
 }
 
 td, th{
-    padding: 1px;
-    border: 1px solid rgb(223, 217, 196);
+
+  /*border: 1px solid black; */
+
 }
 
 .map{
-    width: 40%;
+    width: 70%;
 }
